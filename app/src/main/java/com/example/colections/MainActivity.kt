@@ -1,5 +1,6 @@
 package com.example.colections
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,9 +15,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var textResultado:TextView
     private lateinit var executar:Button
 
+//    fun salvarProduto()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("","Leonardo")
 
         textResultado = findViewById(R.id.text_resultado)
         executar = findViewById(R.id.btn_executar)

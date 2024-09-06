@@ -25,7 +25,7 @@ interface Adapter{
 }
 
 class MeuAdaptador(
-    list: List<String>
+    list: List<Paciente>
 ): Adapter{
     private val listaItems = list
 
@@ -34,14 +34,29 @@ class MeuAdaptador(
     }
 
     override fun posicaoItem(posicao: Int): String {
-       val nome = listaItems[posicao]
-       return "$posicao) $nome -"
+//       val nome = listaItems[posicao]
+//       return "$posicao) $nome -"
+        val paciente = listaItems[posicao]
+        var item = "${paciente.nome} - (${paciente.idade}) \n"
+        item += "---------------"
+        return item
     }
 }
 
+data class Paciente(
+    val nome: String,
+    val idade: Int
+)
+
+
 fun main() {
 
-    val listaItems = listOf("Leonardo","Leonard","Leonar","Leona","Leon","Leo","Le","L")
+//    val listaItems = listOf("Leonardo","Leonard","Leonar","Leona","Leon","Leo","Le","L")
+    val listaItems = listOf(
+        Paciente("Leo",22),
+        Paciente("Le",22),
+        Paciente("L",22)
+    )
 
     val componentesListagem = ComponentesListagem()
     componentesListagem.adaptador = MeuAdaptador(listaItems)

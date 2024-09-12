@@ -56,10 +56,12 @@ class RecyclerviewActivity : AppCompatActivity() {
 
         btnAtualizar.setOnClickListener{
 
-            lista.add(
-                Mensagem("Nova Leonar", "Olá Mun", "9:48")
-            )
-            mensagemAdapter.atualizarLista(lista)
+            mensagemAdapter.executarOperacao()
+
+//            lista.add(
+//                Mensagem("Nova Leonar", "Olá Mun", "9:48")
+//            )
+//            mensagemAdapter.atualizarLista(lista)
 
         }
         //LinearLayout(XML e Código)
